@@ -58,3 +58,9 @@
     .post h1 a, .post h1 a:visited {
         color: #000000;
     }
+
+    .author {
+        float: right;
+        font-weight: bold;
+        text-decoration: underline;
+    }

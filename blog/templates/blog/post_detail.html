@@ -17,6 +17,17 @@
             <p>
                 {{ comment.text }}
             </p>
+            <div class="author">
+                {{ comment.author }}
+
+            </div>
+            <br>
+            <div class="date">
+                {{ comment.published_date }}
+            </div>
+            
+
+
         {% endfor %}
         <h2>Добавить комментарий</h2>
         <form method="POST" class="post-form" action="/post/{{ post.id }}/add/"> {% csrf_token %}

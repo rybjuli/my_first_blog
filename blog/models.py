@@ -20,8 +20,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    author = models.ForeignKey('auth.User')
     post = models.ForeignKey(Post, related_name='comments')
     text = models.TextField()
+    published_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Comment"
@@ -29,4 +31,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.id)
-    
+

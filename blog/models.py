@@ -17,3 +17,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')
+    text = models.TextField()
+
+    class Meta:
+        verbose_name = "Comment"
+        verbose_name_plural = "Comments"
+
+    def __str__(self):
+        return str(self.id)
+    
